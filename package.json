@@ -1,0 +1,95 @@
+{
+  "name": "exampletmpl",
+  "version": "0.1.0",
+  "description": "An Example Template",
+  "author": "Example",
+  "productName": "ExampleTmpl",
+  "main": "app/electron/main.js",
+  "private": true,
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "preprod": "webpack --mode production --config ./webpack.prod.js",
+    "dist": "yarn preprod && electron-builder",
+    "dist-mac": "yarn preprod && electron-builder --mac",
+    "dist-linux": "yarn preprod && electron-builder --linux",
+    "dist-windows": "yarn preprod && electron-builder --windows",
+    "live": "webpack serve --config ./webpack.dev.js",
+    "dev": "webpack --mode development --config ./webpack.config.js && cross-env NODE_ENV=development electron ."
+  },
+  "dependencies": {
+    "@babel/core": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@electron/remote": "^2.0.9",
+    "@mdi/js": "^5.3.45",
+    "@mdi/react": "^1.4.0",
+    "@reduxjs/toolkit": "^1.7.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "archiver": "^5.3.1",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "better-sqlite3": "^8.0.1",
+    "electron-is-dev": "^2.0.0",
+    "electron-json-storage": "^4.5.0",
+    "electron-localshortcut": "^3.2.1",
+    "mdi-react": "^7.3.0",
+    "mkdirp": "^1.0.4",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-dropzone": "^11.5.3",
+    "react-icons": "^4.3.1",
+    "react-loading": "^2.0.3",
+    "react-redux": "^7.2.6",
+    "styled-components": "^5.1.1",
+    "tmp": "^0.2.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^9.1.0",
+    "concurrently": "^5.2.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.3",
+    "electron": "^22.0.0",
+    "electron-builder": "^23.6.0",
+    "electron-devtools-installer": "^3.2.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "wait-on": "^5.0.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "build": {
+    "productName": "MyProductName",
+    "appId": "com.mycompany|electron.myproductname",
+    "directories": {
+      "buildResources": "resources"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "snap",
+        "AppImage"
+      ]
+    }
+  }
+}
