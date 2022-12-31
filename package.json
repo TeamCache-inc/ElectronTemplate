@@ -30,7 +30,6 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "babel-plugin-module-resolver": "^4.1.0",
-    "electron-is-dev": "^2.0.0",
     "electron-json-storage": "^4.5.0",
     "electron-localshortcut": "^3.2.1",
     "mdi-react": "^7.3.0",
