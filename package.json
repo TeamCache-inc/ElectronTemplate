@@ -15,7 +15,8 @@
     "dist-linux": "yarn preprod && electron-builder --linux",
     "dist-windows": "yarn preprod && electron-builder --windows",
     "live": "webpack serve --config ./webpack.dev.js",
-    "dev": "webpack --mode development --config ./webpack.config.js && cross-env NODE_ENV=development electron ."
+    "dev": "webpack --mode development --config ./webpack.config.js && cross-env NODE_ENV=development electron .",
+    "start": "node start.js"
   },
   "dependencies": {
     "@babel/core": "^7.20.7",
